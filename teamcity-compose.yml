@@ -4,8 +4,8 @@ services:
     image: "jetbrains/teamcity-server:2018.1.2"
     container_name: teamcity-server
     volumes:
-    - ${MAIN_WORKSPACE}server:/data/teamcity_server/datadir
-    - ${MAIN_WORKSPACE}logs/server:/opt/teamcity/logs
+    - ${WORKSPACE}server:/data/teamcity_server/datadir
+    - ${WORKSPACE}logs/server:/opt/teamcity/logs
     ports:
     - 8111:8111
     - 5007:5005 # teamcity debug port
@@ -17,8 +17,8 @@ services:
     image: "jetbrains/teamcity-agent:2018.1.2"
     container_name: teamcity-agent
     volumes:
-    - ${MAIN_WORKSPACE}agent/conf:/data/teamcity_agent/conf
-    - ${MAIN_WORKSPACE}logs/agent:/opt/buildagent/logs
+    - ${WORKSPACE}agent/conf:/data/teamcity_agent/conf
+    - ${WORKSPACE}logs/agent:/opt/buildagent/logs
     ports:
     - 5008:5005 # teamcity agent debug port
     - 5018:5015 # BuildInfo debug port

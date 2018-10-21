@@ -4,7 +4,7 @@ services:
     image: "jenkins/jenkins:2.121.3-alpine"
     container_name: jenkins-server
     volumes:
-      - ${WORKSPACE}jenkins-home:/var/jenkins_home
+      - ${WORKSPACE}home:/var/jenkins_home
     ports:
       - 8080:8080 # jenkins port
       - 50000:50000 # image requirement
@@ -18,7 +18,7 @@ services:
     image: "jenkins/jnlp-slave"
     container_name: jenkins-agent
     volumes:
-      - ${WORKSPACE}jenkins-agent:/var/jenkins_agent
+      - ${WORKSPACE}agent:/var/jenkins_agent
     ports:
       - 5006:5005 # jenkins agent debug port
       - 5016:5015 # BuildInfo debug port

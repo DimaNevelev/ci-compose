@@ -3,7 +3,11 @@
 
 # User-specific stuff
 .idea/**/workspace.xml
+.idea/**/ci-compose.iml
+.idea/**/misc.xml
+.idea/**/vcs.xml
 .idea/**/tasks.xml
+.idea/**/modules.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
